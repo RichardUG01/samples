@@ -26,11 +26,12 @@ jobs:
         run: dotnet build core/workers/workers.sln --configuration Release
 
       - name: Análisis con SonarCloud
-        uses: SonarSource/sonarcloud-github-action@v2
+        uses: SonarSource/sonarqube-scan-action@v2
         with:
           projectBaseDir: core/workers
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
           SONAR_PROJECT_KEY: RichardUG01_samples
           SONAR_ORGANIZATION: RichardUG01
           SONAR_BRANCH_NAME: main
