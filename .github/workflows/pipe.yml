@@ -24,3 +24,12 @@ jobs:
 
       - name: Compilar
         run: dotnet build core/workers/workers.sln --configuration Release
+
+      - name: Análisis con SonarCloud
+        uses: SonarSource/sonarqube-scan-action@v2
+        with:
+          projectBaseDir: core/workers
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_BRANCH_NAME: main
+
