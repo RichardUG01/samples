@@ -26,8 +26,8 @@ jobs:
         run: dotnet build core/workers/workers.sln --configuration Release
 
       - name: Restaurar dependencias (unit-testing)
-        run: dotnet restore csharp/unit-testing/testing.sln
+        run: dotnet restore csharp/unit-testing/UnitTesting.sln
 
       - name: Ejecutar pruebas unitarias
-        run: dotnet test csharp/unit-testing/testing.sln --configuration Release
+        run: dotnet test csharp/unit-testing/UnitTesting.sln --configuration Release
 
