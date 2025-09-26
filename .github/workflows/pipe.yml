@@ -29,9 +29,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: core/workers
+          projectKey: RichardUG01_samples
+          organization: RichardUG01
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: RichardUG01_samples
-          SONAR_ORGANIZATION: RichardUG01
           SONAR_BRANCH_NAME: main
 
